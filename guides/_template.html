@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[TITRE ARTICLE] — ÉlectriqueQC</title>
+  <meta name="description" content="[META DESCRIPTION 150 caractères max]">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent: #00CFCF;
+      --bg: #0B0B0B;
+      --text: #EDE8DC;
+      --text-muted: rgba(237,232,220,0.55);
+      --text-dim: rgba(237,232,220,0.3);
+      --border: rgba(255,255,255,0.08);
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--text); min-height: 100vh; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 2.5rem;
+      border-bottom: 0.5px solid var(--border);
+      background: rgba(11,11,11,0.92);
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo { font-family: var(--font-display); font-weight: 900; font-size: 20px; letter-spacing: 1px; text-transform: uppercase; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 12px; font-weight: 500; color: rgba(237,232,220,0.45); letter-spacing: .8px; text-transform: uppercase; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+    .article-header {
+      padding: 4rem 2.5rem 3rem;
+      border-bottom: 0.5px solid var(--border);
+      max-width: 760px; margin: 0 auto;
+    }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 500;
+      letter-spacing: .8px; text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 1.5rem;
+    }
+    .breadcrumb a { color: var(--accent); transition: opacity .2s; }
+    .breadcrumb a:hover { opacity: .7; }
+    .article-tag {
+      display: inline-block;
+      font-size: 10px; font-weight: 500;
+      letter-spacing: .8px; text-transform: uppercase;
+      color: var(--accent); background: rgba(0,207,207,0.1);
+      padding: 3px 8px; border-radius: 2px;
+      margin-bottom: 1.2rem;
+    }
+    .article-title {
+      font-family: var(--font-display);
+      font-weight: 900; font-size: clamp(36px, 5vw, 56px);
+      line-height: .95; letter-spacing: -1px; text-transform: uppercase;
+      color: var(--text); margin-bottom: 1.2rem;
+    }
+    .article-meta {
+      display: flex; gap: 1.5rem; align-items: center;
+      font-size: 12px; color: var(--text-dim);
+      padding-top: 1.2rem; border-top: 0.5px solid var(--border);
+      margin-top: 1.2rem;
+    }
+    .article-meta i { font-size: 14px; vertical-align: -2px; margin-right: 4px; }
+
+    .article-body {
+      max-width: 760px; margin: 0 auto;
+      padding: 3rem 2.5rem 4rem;
+    }
+    .article-body p {
+      font-size: 16px; font-weight: 300;
+      color: var(--text-muted); line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .article-body h2 {
+      font-family: var(--font-display);
+      font-weight: 700; font-size: 28px;
+      text-transform: uppercase; letter-spacing: .5px;
+      color: var(--text);
+      margin: 2.5rem 0 1rem;
+      padding-bottom: .8rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .article-body h3 {
+      font-family: var(--font-display);
+      font-weight: 700; font-size: 20px;
+      text-transform: uppercase; letter-spacing: .3px;
+      color: var(--text);
+      margin: 1.8rem 0 .8rem;
+    }
+    .article-body ul, .article-body ol {
+      padding-left: 1.5rem; margin-bottom: 1.5rem;
+    }
+    .article-body li {
+      font-size: 15px; font-weight: 300;
+      color: var(--text-muted); line-height: 1.7;
+      margin-bottom: .5rem;
+    }
+    .article-body a { color: var(--accent); border-bottom: 0.5px solid rgba(0,207,207,0.3); transition: border-color .2s; }
+    .article-body a:hover { border-color: var(--accent); }
+
+    .callout {
+      background: rgba(0,207,207,0.06);
+      border-left: 2px solid var(--accent);
+      padding: 1.2rem 1.5rem;
+      border-radius: 0 4px 4px 0;
+      margin: 2rem 0;
+    }
+    .callout p { margin: 0; font-size: 14px; }
+
+    .article-cta {
+      margin-top: 3rem; padding-top: 2rem;
+      border-top: 0.5px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent); color: var(--bg);
+      font-weight: 500; font-size: 13px;
+      padding: 11px 22px; border-radius: 2px;
+      transition: opacity .2s;
+    }
+    .cta-btn:hover { opacity: .85; }
+    .cta-label { font-size: 13px; color: var(--text-dim); max-width: 300px; line-height: 1.5; }
+
+    footer { padding: 1.5rem 2.5rem; border-top: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .footer-txt { font-size: 11px; color: rgba(237,232,220,0.2); }
+    .footer-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+
+    @media (max-width: 768px) {
+      .nav { padding: 1rem 1.2rem; }
+      .nav-links { display: none; }
+      .article-header, .article-body { padding-left: 1.2rem; padding-right: 1.2rem; }
+      .article-cta { flex-direction: column; align-items: flex-start; }
+      footer { padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav-logo">Électrique<span>QC</span></a>
+    <ul class="nav-links">
+      <li><a href="/guides" class="active">Guides</a></li>
+      <li><a href="/bornes">Bornes</a></li>
+      <li><a href="/simulateurs">Simulateurs</a></li>
+      <li><a href="/boutique">Boutique</a></li>
+      <li><a href="https://www.facebook.com/groups/123chargez" target="_blank" rel="noopener">Communauté</a></li>
+    </ul>
+  </nav>
+
+  <header class="article-header">
+    <div class="breadcrumb">
+      <a href="/guides">Guides</a>
+      <i class="ti ti-chevron-right" aria-hidden="true"></i>
+      <span>[CATÉGORIE]</span>
+    </div>
+    <div class="article-tag">[CATÉGORIE]</div>
+    <h1 class="article-title">[TITRE DE L'ARTICLE]</h1>
+    <div class="article-meta">
+      <span><i class="ti ti-clock" aria-hidden="true"></i>[X] min de lecture</span>
+      <span><i class="ti ti-calendar" aria-hidden="true"></i>Mis à jour [MOIS ANNÉE]</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <!-- INTRO -->
+    <p>[PARAGRAPHE D'INTRODUCTION — accroche directe, 2-3 phrases max]</p>
+
+    <!-- SECTION 1 -->
+    <h2>[TITRE SECTION 1]</h2>
+    <p>[Contenu...]</p>
+
+    <div class="callout">
+      <p><strong>À retenir :</strong> [Point clé de la section en une phrase.]</p>
+    </div>
+
+    <!-- SECTION 2 -->
+    <h2>[TITRE SECTION 2]</h2>
+    <p>[Contenu...]</p>
+
+    <!-- SECTION 3 -->
+    <h2>[TITRE SECTION 3]</h2>
+    <p>[Contenu...]</p>
+    <ul>
+      <li>[Point 1]</li>
+      <li>[Point 2]</li>
+      <li>[Point 3]</li>
+    </ul>
+
+    <!-- CTA -->
+    <div class="article-cta">
+      <p class="cta-label">Des questions ? La communauté de 26 300 membres a sûrement la réponse.</p>
+      <a href="https://www.facebook.com/groups/123chargez" target="_blank" rel="noopener" class="cta-btn">
+        Poser ma question <i class="ti ti-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+
+  </article>
+
+  <footer>
+    <span class="footer-txt">electriqueqc.com · La référence VÉ au Québec</span>
+    <div class="footer-dot" aria-hidden="true"></div>
+  </footer>
+
+</body>
+</html>
