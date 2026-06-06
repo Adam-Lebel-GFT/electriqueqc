@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rouler électrique l'hiver au Québec — ÉlectriqueQC</title>
+  <meta name="description" content="Perte d'autonomie par temps froid, préchauffage, recharge hivernale : le guide complet pour survivre au -30°C en VÉ au Québec.">
+  <meta property="og:title" content="Rouler électrique l'hiver au Québec">
+  <meta property="og:url" content="https://electriqueqc.com/guides/ve-hiver-quebec">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent: #00CFCF;
+      --bg: #0B0B0B;
+      --text: #EDE8DC;
+      --text-muted: rgba(237,232,220,0.55);
+      --text-dim: rgba(237,232,220,0.3);
+      --border: rgba(255,255,255,0.08);
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--text); min-height: 100vh; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+
+    .nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 2.5rem; border-bottom: 0.5px solid var(--border); background: rgba(11,11,11,0.92); backdrop-filter: blur(12px); }
+    .nav-logo { font-family: var(--font-display); font-weight: 900; font-size: 20px; letter-spacing: 1px; text-transform: uppercase; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 12px; font-weight: 500; color: rgba(237,232,220,0.45); letter-spacing: .8px; text-transform: uppercase; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+    .article-header { padding: 4rem 2.5rem 3rem; border-bottom: 0.5px solid var(--border); max-width: 760px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 500; letter-spacing: .8px; text-transform: uppercase; color: var(--text-dim); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--accent); }
+    .article-tag { display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: .8px; text-transform: uppercase; color: var(--accent); background: rgba(0,207,207,0.1); padding: 3px 8px; border-radius: 2px; margin-bottom: 1.2rem; }
+    .article-title { font-family: var(--font-display); font-weight: 900; font-size: clamp(36px, 5vw, 56px); line-height: .95; letter-spacing: -1px; text-transform: uppercase; color: var(--text); margin-bottom: 1.2rem; }
+    .article-meta { display: flex; gap: 1.5rem; align-items: center; font-size: 12px; color: var(--text-dim); padding-top: 1.2rem; border-top: 0.5px solid var(--border); margin-top: 1.2rem; }
+    .article-meta i { font-size: 14px; vertical-align: -2px; margin-right: 4px; }
+
+    .article-body { max-width: 760px; margin: 0 auto; padding: 3rem 2.5rem 4rem; }
+    .article-body p { font-size: 16px; font-weight: 300; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem; }
+    .article-body h2 { font-family: var(--font-display); font-weight: 700; font-size: 28px; text-transform: uppercase; letter-spacing: .5px; color: var(--text); margin: 2.5rem 0 1rem; padding-bottom: .8rem; border-bottom: 0.5px solid var(--border); }
+    .article-body h3 { font-family: var(--font-display); font-weight: 700; font-size: 20px; text-transform: uppercase; letter-spacing: .3px; color: var(--text); margin: 1.8rem 0 .8rem; }
+    .article-body ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+    .article-body li { font-size: 15px; font-weight: 300; color: var(--text-muted); line-height: 1.7; margin-bottom: .6rem; }
+    .article-body a { color: var(--accent); border-bottom: 0.5px solid rgba(0,207,207,0.3); transition: border-color .2s; }
+    .article-body a:hover { border-color: var(--accent); }
+
+    .callout { background: rgba(0,207,207,0.06); border-left: 2px solid var(--accent); padding: 1.2rem 1.5rem; border-radius: 0 4px 4px 0; margin: 2rem 0; }
+    .callout p { margin: 0; font-size: 14px; }
+    .callout-warn { background: rgba(239,160,39,0.06); border-left: 2px solid #EFA027; }
+    .callout-warn p { color: rgba(237,232,220,0.65); }
+
+    .temp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 1.5rem 0; }
+    .temp-card { background: rgba(255,255,255,0.03); border: 0.5px solid var(--border); border-radius: 4px; padding: 1rem .8rem; text-align: center; }
+    .temp-val { font-family: var(--font-display); font-weight: 900; font-size: 22px; line-height: 1; margin-bottom: .3rem; }
+    .temp-label { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: .5px; margin-bottom: .5rem; }
+    .temp-loss { font-size: 13px; font-weight: 500; }
+
+    .tips-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 1.5rem 0; }
+    .tip { background: rgba(0,207,207,0.05); border: 0.5px solid rgba(0,207,207,0.15); border-radius: 4px; padding: 1rem 1.1rem; }
+    .tip-icon { font-size: 18px; color: var(--accent); margin-bottom: .5rem; }
+    .tip-title { font-family: var(--font-display); font-weight: 700; font-size: 15px; text-transform: uppercase; color: var(--text); margin-bottom: .4rem; }
+    .tip-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; font-weight: 300; }
+
+    .article-cta { margin-top: 3rem; padding-top: 2rem; border-top: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: var(--bg); font-weight: 500; font-size: 13px; padding: 11px 22px; border-radius: 2px; transition: opacity .2s; }
+    .cta-btn:hover { opacity: .85; }
+    .cta-label { font-size: 13px; color: var(--text-dim); max-width: 300px; line-height: 1.5; }
+
+    .nav-article { display: flex; justify-content: space-between; gap: 1rem; margin-top: 2rem; padding-top: 2rem; border-top: 0.5px solid var(--border); }
+    .nav-article a { font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: .8px; font-weight: 500; }
+
+    footer { padding: 1.5rem 2.5rem; border-top: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .footer-txt { font-size: 11px; color: rgba(237,232,220,0.2); }
+    .footer-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+
+    @media (max-width: 768px) {
+      .nav { padding: 1rem 1.2rem; }
+      .nav-links { display: none; }
+      .article-header, .article-body { padding-left: 1.2rem; padding-right: 1.2rem; }
+      .temp-grid { grid-template-columns: repeat(2, 1fr); }
+      .tips-grid { grid-template-columns: 1fr; }
+      .article-cta { flex-direction: column; align-items: flex-start; }
+      footer { padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav-logo">Électrique<span>QC</span></a>
+    <ul class="nav-links">
+      <li><a href="/guides" class="active">Guides</a></li>
+      <li><a href="/bornes">Bornes</a></li>
+      <li><a href="/simulateurs">Simulateurs</a></li>
+      <li><a href="/boutique">Boutique</a></li>
+      <li><a href="https://www.facebook.com/groups/123chargez" target="_blank" rel="noopener">Communauté</a></li>
+    </ul>
+  </nav>
+
+  <header class="article-header">
+    <div class="breadcrumb">
+      <a href="/guides">Guides</a>
+      <i class="ti ti-chevron-right" aria-hidden="true"></i>
+      <span>Hiver</span>
+    </div>
+    <div class="article-tag">Hiver</div>
+    <h1 class="article-title">Rouler électrique l'hiver au Québec</h1>
+    <div class="article-meta">
+      <span><i class="ti ti-clock" aria-hidden="true"></i>7 min de lecture</span>
+      <span><i class="ti ti-calendar" aria-hidden="true"></i>Mis à jour juin 2026</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p>L'hiver québécois, c'est le test ultime pour un VÉ. Le froid réduit l'autonomie, ralentit la recharge, et crée une anxiété bien réelle chez les nouveaux propriétaires. La bonne nouvelle : avec quelques habitudes simples, rouler électrique en hiver devient aussi naturel qu'en été — et souvent plus agréable.</p>
+
+    <h2>La perte d'autonomie : la réalité sans filtre</h2>
+
+    <p>Le froid affecte les batteries lithium-ion de deux façons : il réduit leur capacité chimique, et il force le système de chauffage de l'habitacle à puiser dans la batterie de traction. Résultat : une autonomie significativement réduite par rapport aux chiffres officiels.</p>
+
+    <div class="temp-grid">
+      <div class="temp-card">
+        <div class="temp-val" style="color:#00CFCF">+10°C</div>
+        <div class="temp-label">Température</div>
+        <div class="temp-loss" style="color:#EDE8DC">~100%</div>
+        <div class="temp-label">Autonomie réelle</div>
+      </div>
+      <div class="temp-card">
+        <div class="temp-val" style="color:#7DD3D3">0°C</div>
+        <div class="temp-label">Température</div>
+        <div class="temp-loss" style="color:#EDE8DC">~80%</div>
+        <div class="temp-label">Autonomie réelle</div>
+      </div>
+      <div class="temp-card">
+        <div class="temp-val" style="color:#EDE8DC">-15°C</div>
+        <div class="temp-label">Température</div>
+        <div class="temp-loss" style="color:#EFA027">~65%</div>
+        <div class="temp-label">Autonomie réelle</div>
+      </div>
+      <div class="temp-card">
+        <div class="temp-val" style="color:#EDE8DC">-30°C</div>
+        <div class="temp-label">Température</div>
+        <div class="temp-loss" style="color:#E24B4A">~50%</div>
+        <div class="temp-label">Autonomie réelle</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>Exemple concret :</strong> Un VÉ annoncé à 400 km d'autonomie fera environ 200 à 260 km par une journée à -25°C avec le chauffage en marche. Planifiez en conséquence — et doublez les arrêts de recharge sur les longs trajets hivernaux.</p>
+    </div>
+
+    <h2>Le préchauffage : votre meilleur allié</h2>
+
+    <p>Le préchauffage de l'habitacle pendant que le véhicule est encore branché est la technique la plus efficace pour préserver l'autonomie en hiver. En chauffant l'habitacle sur le courant de la borne (et non sur la batterie), vous démarrez avec une batterie pleine et un habitacle chaud.</p>
+
+    <p>Pratiquement tous les VÉ modernes permettent de programmer le préchauffage depuis leur application mobile. Voici la procédure type :</p>
+
+    <ul>
+      <li>Branchez votre VÉ chaque soir, même si la batterie n'est qu'à 70%.</li>
+      <li>Programmez le départ dans l'application (ex. 7h45 pour partir à 8h00).</li>
+      <li>Le système préchauffe habitacle ET batterie à partir du courant de la borne.</li>
+      <li>Au moment de partir, déconnectez le câble — vous êtes prêt.</li>
+    </ul>
+
+    <div class="callout callout-warn">
+      <p><strong>Attention :</strong> Ne préchauffez jamais dans un garage fermé avec un VÉ branché si votre ventilation est insuffisante. Contrairement à un moteur thermique, le VÉ ne produit pas de CO — mais le câble de recharge doit rester accessible et non écrasé.</p>
+    </div>
+
+    <h2>Recharger en hiver : ce qui change</h2>
+
+    <p>Le froid ralentit la recharge, qu'elle soit à domicile ou en borne rapide. Voici ce que vous observerez concrètement.</p>
+
+    <h3>À domicile (Level 2)</h3>
+    <p>Une batterie très froide (en dessous de -10°C) peut temporairement limiter sa vitesse d'acceptation de charge. Si votre VÉ est garé à l'extérieur, les premières heures de recharge peuvent être légèrement plus lentes. Solution : programmez la recharge pour qu'elle se termine juste avant votre départ — la batterie sera plus chaude en fin de charge.</p>
+
+    <h3>En borne rapide (DC)</h3>
+    <p>La recharge rapide sur une batterie froide est significativement limitée par le BMS (système de gestion de batterie). Certains VÉ récents intègrent un préchauffage automatique de la batterie quand vous naviguer vers une borne rapide — activez cette fonctionnalité si elle est disponible sur votre modèle.</p>
+
+    <h2>Les bons réflexes au quotidien</h2>
+
+    <div class="tips-grid">
+      <div class="tip">
+        <div class="tip-icon"><i class="ti ti-plug" aria-hidden="true"></i></div>
+        <div class="tip-title">Branchez chaque soir</div>
+        <div class="tip-desc">Même à 80%. Le VÉ maintient la batterie au chaud quand il est branché — sans consommer d'électricité si elle n'est pas froid.</div>
+      </div>
+      <div class="tip">
+        <div class="tip-icon"><i class="ti ti-snowflake" aria-hidden="true"></i></div>
+        <div class="tip-title">Limitez le chauffage en roulant</div>
+        <div class="tip-desc">Utilisez le chauffage de siège et de volant plutôt que le chauffage d'air — ils consomment 3 à 5x moins d'énergie pour le même confort.</div>
+      </div>
+      <div class="tip">
+        <div class="tip-icon"><i class="ti ti-chart-bar" aria-hidden="true"></i></div>
+        <div class="tip-title">Gardez 20% de marge</div>
+        <div class="tip-desc">En hiver, ne descendez pas en dessous de 20% de batterie. Le froid réduit les performances en basse charge et la recharge rapide est moins efficace.</div>
+      </div>
+      <div class="tip">
+        <div class="tip-icon"><i class="ti ti-map-pin" aria-hidden="true"></i></div>
+        <div class="tip-title">Planifiez vos arrêts</div>
+        <div class="tip-desc">Sur les longs trajets, prévoyez des arrêts de recharge plus fréquents. Utilisez PlugShare ou l'application de votre constructeur pour repérer les bornes en route.</div>
+      </div>
+    </div>
+
+    <h2>Les pneus d'hiver : obligatoires et essentiels</h2>
+
+    <p>Au Québec, les pneus d'hiver sont obligatoires du 1er décembre au 15 mars pour tous les véhicules, VÉ inclus. Pour un VÉ, c'est doublement important : le couple électrique instantané peut faire patiner un pneu 4 saisons bien plus facilement qu'un moteur thermique.</p>
+
+    <p>Choisissez des pneus d'hiver spécifiquement homologués pour les VÉ si votre modèle les exige — certains constructeurs imposent des pneus à faible résistance au roulement pour préserver l'autonomie. Vérifiez dans votre manuel propriétaire.</p>
+
+    <div class="callout">
+      <p><strong>Budget pneus d'hiver :</strong> Comptez 800 $ à 1 500 $ pour un premier jeu complet avec jantes acier (plus pratiques à l'usage que les jantes alu pour les pneus d'hiver). L'investissement est rentabilisé en 2 à 3 saisons comparé à la location annuelle.</p>
+    </div>
+
+    <h2>L'hiver en VÉ : le vrai bilan</h2>
+
+    <p>Après un premier hiver, la grande majorité des propriétaires de VÉ au Québec sont soulagés. L'anxiété pré-hivernale disparaît rapidement une fois les habitudes prises. Le préchauffage depuis l'appli, la recharge nocturne systématique, et la planification des longs trajets deviennent des automatismes en quelques semaines.</p>
+
+    <p>Ce que personne ne vous dit : démarrer dans un habitacle chaud sans jamais faire tourner un moteur au ralenti dans le froid, c'est l'un des plaisirs inattendus du VÉ au Québec.</p>
+
+    <div class="article-cta">
+      <p class="cta-label">Vos questions sur le premier hiver en VÉ ? La communauté a vécu ça.</p>
+      <a href="https://www.facebook.com/groups/123chargez" target="_blank" rel="noopener" class="cta-btn">
+        Rejoindre la discussion <i class="ti ti-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <div class="nav-article">
+      <a href="/guides/recharger-domicile"><i class="ti ti-arrow-left" aria-hidden="true"></i> Guide recharge à domicile</a>
+      <a href="/guides">Tous les guides <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+    </div>
+
+  </article>
+
+  <footer>
+    <span class="footer-txt">electriqueqc.com · La référence VÉ au Québec</span>
+    <div class="footer-dot" aria-hidden="true"></div>
+  </footer>
+
+</body>
+</html>
