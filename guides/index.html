@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guides VÉ — ÉlectriqueQC</title>
+  <meta name="description" content="Guides pratiques pour rouler électrique au Québec : acheter, recharger, subventions, hiver.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent: #00CFCF;
+      --bg: #0B0B0B;
+      --text: #EDE8DC;
+      --text-muted: rgba(237,232,220,0.45);
+      --text-dim: rgba(237,232,220,0.3);
+      --border: rgba(255,255,255,0.08);
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--text); min-height: 100vh; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 2.5rem;
+      border-bottom: 0.5px solid var(--border);
+      background: rgba(11,11,11,0.92);
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo { font-family: var(--font-display); font-weight: 900; font-size: 20px; letter-spacing: 1px; text-transform: uppercase; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 12px; font-weight: 500; color: var(--text-muted); letter-spacing: .8px; text-transform: uppercase; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+    .page-header {
+      padding: 4rem 2.5rem 3rem;
+      border-bottom: 0.5px solid var(--border);
+      max-width: 1200px; margin: 0 auto;
+    }
+    .page-label { font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; display: block; }
+    .page-title { font-family: var(--font-display); font-weight: 900; font-size: clamp(42px, 6vw, 64px); line-height: .93; letter-spacing: -1.5px; text-transform: uppercase; margin-bottom: 1rem; }
+    .page-sub { font-size: 14px; font-weight: 300; color: var(--text-muted); max-width: 480px; line-height: 1.7; }
+
+    .guides-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 0.5px solid var(--border);
+      max-width: 1200px; margin: 0 auto;
+    }
+
+    .guide-card {
+      display: block;
+      padding: 2rem 2.5rem;
+      border-right: 0.5px solid var(--border);
+      border-bottom: 0.5px solid var(--border);
+      transition: background .25s;
+    }
+    .guide-card:hover { background: rgba(0,207,207,0.04); }
+    .guide-card:hover .guide-arrow { transform: translateX(4px); }
+    .guide-card:nth-child(3n) { border-right: none; }
+
+    .guide-tag {
+      display: inline-block;
+      font-size: 10px; font-weight: 500;
+      letter-spacing: .8px; text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(0,207,207,0.1);
+      padding: 3px 8px; border-radius: 2px;
+      margin-bottom: 1.2rem;
+    }
+    .guide-title {
+      font-family: var(--font-display);
+      font-weight: 700; font-size: 22px;
+      line-height: 1.1; text-transform: uppercase;
+      letter-spacing: .3px;
+      color: var(--text);
+      margin-bottom: .8rem;
+    }
+    .guide-excerpt { font-size: 13px; color: var(--text-muted); line-height: 1.65; margin-bottom: 1.5rem; }
+    .guide-footer { display: flex; align-items: center; justify-content: space-between; }
+    .guide-meta { font-size: 11px; color: var(--text-dim); letter-spacing: .3px; }
+    .guide-arrow { font-size: 16px; color: var(--accent); transition: transform .2s; }
+
+    .coming-soon {
+      opacity: .4;
+      pointer-events: none;
+    }
+    .coming-badge {
+      display: inline-block;
+      font-size: 10px; font-weight: 500;
+      letter-spacing: .8px; text-transform: uppercase;
+      color: var(--text-dim);
+      border: 0.5px solid var(--border);
+      padding: 3px 8px; border-radius: 2px;
+      margin-bottom: 1.2rem;
+    }
+
+    footer { padding: 1.5rem 2.5rem; border-top: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .footer-txt { font-size: 11px; color: rgba(237,232,220,0.2); }
+    .footer-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+
+    @media (max-width: 768px) {
+      .nav { padding: 1rem 1.2rem; }
+      .nav-links { display: none; }
+      .page-header { padding: 2.5rem 1.2rem 2rem; }
+      .guides-grid { grid-template-columns: 1fr; }
+      .guide-card { border-right: none; }
+      footer { padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav-logo">Électrique<span>QC</span></a>
+    <ul class="nav-links">
+      <li><a href="/guides" class="active">Guides</a></li>
+      <li><a href="/bornes">Bornes</a></li>
+      <li><a href="/simulateurs">Simulateurs</a></li>
+      <li><a href="/boutique">Boutique</a></li>
+      <li><a href="https://www.facebook.com/groups/123chargez" target="_blank" rel="noopener">Communauté</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <span class="page-label"><i class="ti ti-book-2" aria-hidden="true"></i> Guides pratiques</span>
+    <h1 class="page-title">Tout savoir pour<br>rouler <span style="color:var(--accent)">électrique</span>.</h1>
+    <p class="page-sub">Des guides rédigés par et pour la communauté VÉ du Québec — sans jargon, sans bullshit.</p>
+  </div>
+
+  <div class="guides-grid">
+
+    <a href="/guides/acheter-ve-quebec" class="guide-card">
+      <div class="guide-tag">Achat</div>
+      <h2 class="guide-title">Comment acheter un VÉ au Québec en 2026</h2>
+      <p class="guide-excerpt">Subventions Roulez Vert, crédits fédéraux, choix du modèle, négociation chez le concessionnaire. Le guide complet.</p>
+      <div class="guide-footer">
+        <span class="guide-meta">Guide complet · 8 min</span>
+        <i class="ti ti-arrow-right guide-arrow" aria-hidden="true"></i>
+      </div>
+    </a>
+
+    <a href="/guides/recharger-domicile" class="guide-card">
+      <div class="guide-tag">Recharge</div>
+      <h2 class="guide-title">Recharger à domicile : le guide complet</h2>
+      <p class="guide-excerpt">Niveau 1 ou Level 2 ? Quel électricien, quel chargeur, quel coût ? Tout ce qu'il faut savoir avant d'installer votre borne.</p>
+      <div class="guide-footer">
+        <span class="guide-meta">Guide complet · 6 min</span>
+        <i class="ti ti-arrow-right guide-arrow" aria-hidden="true"></i>
+      </div>
+    </a>
+
+    <a href="/guides/ve-hiver-quebec" class="guide-card">
+      <div class="guide-tag">Hiver</div>
+      <h2 class="guide-title">Rouler électrique l'hiver au Québec</h2>
+      <p class="guide-excerpt">Perte d'autonomie par temps froid, préchauffage, astuces de recharge hivernale. Survivre au -30°C en VÉ.</p>
+      <div class="guide-footer">
+        <span class="guide-meta">Guide complet · 7 min</span>
+        <i class="ti ti-arrow-right guide-arrow" aria-hidden="true"></i>
+      </div>
+    </a>
+
+    <div class="guide-card coming-soon">
+      <div class="coming-badge">À venir</div>
+      <h2 class="guide-title">Subventions Roulez Vert 2026 : le guide</h2>
+      <p class="guide-excerpt">Montants, conditions, démarches. Comment maximiser vos aides gouvernementales à l'achat d'un VÉ.</p>
+      <div class="guide-footer">
+        <span class="guide-meta">Bientôt disponible</span>
+      </div>
+    </div>
+
+    <div class="guide-card coming-soon">
+      <div class="coming-badge">À venir</div>
+      <h2 class="guide-title">Entretien d'un VÉ : ce qui change vraiment</h2>
+      <p class="guide-excerpt">Moins de pièces, moins de vidanges. Ce qu'il faut quand même vérifier et à quelle fréquence.</p>
+      <div class="guide-footer">
+        <span class="guide-meta">Bientôt disponible</span>
+      </div>
+    </div>
+
+    <div class="guide-card coming-soon">
+      <div class="coming-badge">À venir</div>
+      <h2 class="guide-title">Voyager en VÉ au Québec : planifier son trajet</h2>
+      <p class="guide-excerpt">Planificateur de route, bornes rapides sur l'autoroute, temps de recharge. Road trip sans stress.</p>
+      <div class="guide-footer">
+        <span class="guide-meta">Bientôt disponible</span>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span class="footer-txt">electriqueqc.com · La référence VÉ au Québec</span>
+    <div class="footer-dot" aria-hidden="true"></div>
+  </footer>
+
+</body>
+</html>
