@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recharger à domicile : le guide complet — ÉlectriqueQC</title>
+  <meta name="description" content="Niveau 1 ou Level 2, quel électricien, quel chargeur, quel coût : tout savoir sur la recharge à domicile au Québec avant d'installer votre borne.">
+  <meta property="og:title" content="Recharger à domicile : le guide complet">
+  <meta property="og:url" content="https://electriqueqc.com/guides/recharger-domicile">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent: #00CFCF;
+      --bg: #0B0B0B;
+      --text: #EDE8DC;
+      --text-muted: rgba(237,232,220,0.55);
+      --text-dim: rgba(237,232,220,0.3);
+      --border: rgba(255,255,255,0.08);
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--text); min-height: 100vh; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+
+    .nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 2.5rem; border-bottom: 0.5px solid var(--border); background: rgba(11,11,11,0.92); backdrop-filter: blur(12px); }
+    .nav-logo { font-family: var(--font-display); font-weight: 900; font-size: 20px; letter-spacing: 1px; text-transform: uppercase; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 12px; font-weight: 500; color: rgba(237,232,220,0.45); letter-spacing: .8px; text-transform: uppercase; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+    .article-header { padding: 4rem 2.5rem 3rem; border-bottom: 0.5px solid var(--border); max-width: 760px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 500; letter-spacing: .8px; text-transform: uppercase; color: var(--text-dim); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--accent); }
+    .article-tag { display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: .8px; text-transform: uppercase; color: var(--accent); background: rgba(0,207,207,0.1); padding: 3px 8px; border-radius: 2px; margin-bottom: 1.2rem; }
+    .article-title { font-family: var(--font-display); font-weight: 900; font-size: clamp(36px, 5vw, 56px); line-height: .95; letter-spacing: -1px; text-transform: uppercase; color: var(--text); margin-bottom: 1.2rem; }
+    .article-meta { display: flex; gap: 1.5rem; align-items: center; font-size: 12px; color: var(--text-dim); padding-top: 1.2rem; border-top: 0.5px solid var(--border); margin-top: 1.2rem; }
+    .article-meta i { font-size: 14px; vertical-align: -2px; margin-right: 4px; }
+
+    .article-body { max-width: 760px; margin: 0 auto; padding: 3rem 2.5rem 4rem; }
+    .article-body p { font-size: 16px; font-weight: 300; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem; }
+    .article-body h2 { font-family: var(--font-display); font-weight: 700; font-size: 28px; text-transform: uppercase; letter-spacing: .5px; color: var(--text); margin: 2.5rem 0 1rem; padding-bottom: .8rem; border-bottom: 0.5px solid var(--border); }
+    .article-body h3 { font-family: var(--font-display); font-weight: 700; font-size: 20px; text-transform: uppercase; letter-spacing: .3px; color: var(--text); margin: 1.8rem 0 .8rem; }
+    .article-body ul, .article-body ol { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+    .article-body li { font-size: 15px; font-weight: 300; color: var(--text-muted); line-height: 1.7; margin-bottom: .6rem; }
+    .article-body a { color: var(--accent); border-bottom: 0.5px solid rgba(0,207,207,0.3); transition: border-color .2s; }
+    .article-body a:hover { border-color: var(--accent); }
+
+    .callout { background: rgba(0,207,207,0.06); border-left: 2px solid var(--accent); padding: 1.2rem 1.5rem; border-radius: 0 4px 4px 0; margin: 2rem 0; }
+    .callout p { margin: 0; font-size: 14px; }
+
+    .compare-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 14px; }
+    .compare-table th { font-family: var(--font-display); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .5px; color: var(--accent); text-align: left; padding: .8rem 1rem; border-bottom: 0.5px solid rgba(0,207,207,0.3); }
+    .compare-table td { padding: .8rem 1rem; border-bottom: 0.5px solid var(--border); color: var(--text-muted); font-weight: 300; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table .highlight { color: var(--accent); font-weight: 500; }
+
+    .article-cta { margin-top: 3rem; padding-top: 2rem; border-top: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: var(--bg); font-weight: 500; font-size: 13px; padding: 11px 22px; border-radius: 2px; transition: opacity .2s; }
+    .cta-btn:hover { opacity: .85; }
+    .cta-label { font-size: 13px; color: var(--text-dim); max-width: 300px; line-height: 1.5; }
+
+    .nav-article { display: flex; justify-content: space-between; gap: 1rem; margin-top: 2rem; padding-top: 2rem; border-top: 0.5px solid var(--border); }
+    .nav-article a { font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: .8px; font-weight: 500; }
+
+    footer { padding: 1.5rem 2.5rem; border-top: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .footer-txt { font-size: 11px; color: rgba(237,232,220,0.2); }
+    .footer-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+
+    @media (max-width: 768px) {
+      .nav { padding: 1rem 1.2rem; }
+      .nav-links { display: none; }
+      .article-header, .article-body { padding-left: 1.2rem; padding-right: 1.2rem; }
+      .compare-table { font-size: 12px; }
+      .compare-table th, .compare-table td { padding: .6rem .5rem; }
+      .article-cta { flex-direction: column; align-items: flex-start; }
+      footer { padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav-logo">Électrique<span>QC</span></a>
+    <ul class="nav-links">
+      <li><a href="/guides" class="active">Guides</a></li>
+      <li><a href="/bornes">Bornes</a></li>
+      <li><a href="/simulateurs">Simulateurs</a></li>
+      <li><a href="/boutique">Boutique</a></li>
+      <li><a href="https://www.facebook.com/groups/123chargez" target="_blank" rel="noopener">Communauté</a></li>
+    </ul>
+  </nav>
+
+  <header class="article-header">
+    <div class="breadcrumb">
+      <a href="/guides">Guides</a>
+      <i class="ti ti-chevron-right" aria-hidden="true"></i>
+      <span>Recharge</span>
+    </div>
+    <div class="article-tag">Recharge</div>
+    <h1 class="article-title">Recharger à domicile : le guide complet</h1>
+    <div class="article-meta">
+      <span><i class="ti ti-clock" aria-hidden="true"></i>6 min de lecture</span>
+      <span><i class="ti ti-calendar" aria-hidden="true"></i>Mis à jour juin 2026</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p>Recharger à domicile, c'est la vraie révolution du VÉ. Vous partez chaque matin avec l'équivalent d'un plein — sans jamais mettre les pieds dans une station-service. Mais encore faut-il s'équiper correctement. Voici tout ce que vous devez savoir avant d'appeler un électricien.</p>
+
+    <h2>Niveau 1 vs Level 2 : la différence concrète</h2>
+
+    <p>Il existe deux types de recharge résidentielle au Québec. La différence est majeure, autant en vitesse qu'en coût d'installation.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Prise</th>
+          <th>Vitesse</th>
+          <th>Recharge complète</th>
+          <th>Installation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Niveau 1</td>
+          <td>Prise 120V standard</td>
+          <td>~8 km/h</td>
+          <td>30 à 80 heures</td>
+          <td class="highlight">Aucune</td>
+        </tr>
+        <tr>
+          <td class="highlight">Level 2</td>
+          <td>Circuit 240V dédié</td>
+          <td>~40 à 80 km/h</td>
+          <td class="highlight">4 à 10 heures</td>
+          <td>600 $ – 3 000 $</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <p><strong>Notre recommandation :</strong> Le Niveau 1 peut dépanner si vous faites moins de 60 km par jour. Pour tout le monde else, le Level 2 est indispensable — surtout en hiver quand la batterie froide recharge plus lentement.</p>
+    </div>
+
+    <h2>Choisir sa borne Level 2</h2>
+
+    <p>Sur le marché québécois, les bornes résidentielles Level 2 se ressemblent beaucoup en termes de performance. Ce qui différencie les modèles, c'est surtout la puissance de charge, la connectivité, et les fonctions de programmation.</p>
+
+    <h3>La puissance : 32A ou 48A ?</h3>
+    <p>Une borne à 32 ampères (7,7 kW) est suffisante pour la quasi-totalité des VÉ actuels. Elle rechargera un véhicule de 80 kWh en moins de 11 heures — amplement suffisant pour une nuit. Une borne à 48 ampères (11,5 kW) est utile si vous avez un grand VÉ ou un fourgon électrique, ou si vous prévoyez partager la borne entre deux véhicules.</p>
+
+    <h3>Les fonctions utiles</h3>
+    <ul>
+      <li><strong>Programmation horaire :</strong> Permet de recharger durant les heures creuses — pas critique au Québec où Hydro-Québec n'a pas de tarifs différenciés résidentiels, mais pratique pour contrôler l'état de charge.</li>
+      <li><strong>Application mobile :</strong> Suivi de la recharge à distance, historique de consommation, notifications.</li>
+      <li><strong>Câble intégré vs prise J1772 :</strong> Le câble intégré est plus pratique au quotidien ; la prise J1772 permet d'utiliser différents câbles, pratique si vous changez de véhicule.</li>
+    </ul>
+
+    <h2>L'installation : ce qui se passe vraiment</h2>
+
+    <p>L'installation d'une borne Level 2 doit être effectuée par un électricien licencié (maître électricien au Québec). Voici ce que ça implique concrètement.</p>
+
+    <h3>Ce que l'électricien va évaluer</h3>
+    <ul>
+      <li><strong>La capacité de votre panneau électrique :</strong> Un panneau de 100A peut suffire, mais si votre maison est déjà bien chargée (chauffe-eau électrique, chauffage, climatisation), un panneau de 200A est recommandé.</li>
+      <li><strong>La distance entre le panneau et le garage :</strong> Plus la distance est grande, plus le coût du câblage augmente.</li>
+      <li><strong>L'emplacement de la borne :</strong> Intérieur ou extérieur du garage, côté conducteur ou passager.</li>
+    </ul>
+
+    <h3>Les coûts réels à anticiper</h3>
+    <ul>
+      <li>Borne résidentielle (appareil) : 500 $ à 1 200 $</li>
+      <li>Installation standard (panneau proche, peu de câblage) : 500 $ à 800 $</li>
+      <li>Installation complexe (panneau à mettre à niveau, longue distance) : 1 500 $ à 3 000 $</li>
+      <li>Subvention Hydro-Québec disponible (vérifiez les programmes en cours) : jusqu'à 600 $</li>
+    </ul>
+
+    <div class="callout">
+      <p><strong>Astuce :</strong> Obtenez toujours trois soumissions. Les prix varient énormément entre électriciens. Précisez dès le départ la marque et le modèle de borne que vous souhaitez installer — certains électriciens essaieront de vous vendre leur propre matériel avec une marge.</p>
+    </div>
+
+    <h2>Recharger en condo ou en appartement</h2>
+
+    <p>C'est le dossier le plus complexe de la recharge résidentielle au Québec. Depuis 2022, la loi québécoise (projet de loi 67) oblige les syndicats de copropriété à ne pas refuser de façon déraisonnable les demandes d'installation de bornes. En pratique, ça reste un processus qui demande de la patience.</p>
+
+    <p>Si vous êtes locataire, vous devez obtenir l'accord de votre propriétaire. La loi ne vous y oblige pas, mais certaines villes et programmes d'aide peuvent faciliter la démarche. Renseignez-vous auprès de votre municipalité.</p>
+
+    <h2>Combien ça coûte recharger au Québec ?</h2>
+
+    <p>Avec les tarifs d'Hydro-Québec, recharger un VÉ revient en moyenne à l'équivalent de 0,30 $ à 0,40 $ le litre d'essence. Concrètement, pour une berline consommant 18 kWh/100 km, comptez environ 2,20 $ pour 100 km, contre 15 $ à 20 $ avec un véhicule à essence.</p>
+
+    <p>Sur une année à 20 000 km, l'économie sur le carburant seul dépasse facilement 2 500 $ à 3 500 $.</p>
+
+    <div class="article-cta">
+      <p class="cta-label">Votre situation est particulière ? La communauté a sûrement une réponse concrète.</p>
+      <a href="https://www.facebook.com/groups/123chargez" target="_blank" rel="noopener" class="cta-btn">
+        Poser ma question <i class="ti ti-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <div class="nav-article">
+      <a href="/guides/acheter-ve-quebec"><i class="ti ti-arrow-left" aria-hidden="true"></i> Guide achat VÉ</a>
+      <a href="/guides/ve-hiver-quebec">Guide hiver au Québec <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+    </div>
+
+  </article>
+
+  <footer>
+    <span class="footer-txt">electriqueqc.com · La référence VÉ au Québec</span>
+    <div class="footer-dot" aria-hidden="true"></div>
+  </footer>
+
+</body>
+</html>
